@@ -29,13 +29,21 @@ Public Class formMain
         Me.TopMost = Preferences.Instance.AlwaysOnTop
         Me.Opacity = Preferences.Instance.OpacityNormal
         Me.FormBorderStyle = IIf(Preferences.Instance.AutoBorder, FormBorderStyle.None, FormBorderStyle.FixedToolWindow)
-        Me.Location = New Point(Preferences.Instance.ScreenCenterX - Me.Width / 2, Preferences.Instance.ScreenCenterY - Me.Height / 2)
+
+        If Preferences.Instance.ScreenCenterX = 0 And Preferences.Instance.ScreenCenterY = 0 Then
+            visual.CenterWindow()
+        Else
+            Me.Location = New Point(Preferences.Instance.ScreenCenterX - Me.Width / 2, Preferences.Instance.ScreenCenterY - Me.Height / 2)
+        End If
 
         ' prepare settings menu
         prepareSettingsMenu()
 
         ' unhighlight settings button
         panelSettings_MouseLeave()
+
+        ' read command line data
+        processCommandLine()
 
         ' finally add handler to form resize events so nothing above will fire it
         AddHandler Me.ResizeEnd, AddressOf formMain_Move
@@ -214,7 +222,6 @@ Public Class formMain
 
 #End Region ' form events
 
-    <Experimental>
     Private Function processCommandLine() As Boolean
         'TODO: add saftey check here
         Dim arguments As String() = Environment.GetCommandLineArgs()
