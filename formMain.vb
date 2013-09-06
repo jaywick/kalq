@@ -490,7 +490,7 @@ Public Class formMain
 
     ' create new window with same contents
     Private Sub duplicateWindow()
-        spawn(textExpression.SelectedText)
+        spawn(textExpression.Text)
     End Sub
 
     ' create new window only with selected contents
