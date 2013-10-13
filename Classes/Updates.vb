@@ -124,9 +124,9 @@ Public Class Updates
     Private Shared Function readableVersion(version As Version) As String
         Dim result As String
 
-        If version.Build = 0 And version.Revision = 0 Then
+        If version.Build <= 0 And version.Revision = 0 Then
             result = version.Major & "." & version.Minor
-        ElseIf version.Revision = 0 Then
+        ElseIf version.Revision <= 0 Then
             result = version.Major & "." & version.Minor & "." & version.Build
         Else
             result = version.Major & "." & version.Minor & "." & version.Build & "." & version.Revision
