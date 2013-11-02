@@ -206,7 +206,7 @@ Public Class formMain
                 exitSafely()
             Case Keys.Return
                 ' ENTER = copies result
-                copyAndExit()
+                copyAnswer()
                 e.SuppressKeyPress = True
         End Select
     End Sub
@@ -292,7 +292,7 @@ Public Class formMain
         AddHandler menuWindowOnTop.CheckedChanged, AddressOf menuWindowOnTop_CheckedChanged
         AddHandler menuWindowAutoBorder.CheckedChanged, AddressOf menuAutoBorder_CheckedChanged
 
-        AddHandler menuCopyExit.Click, AddressOf copyAndExit
+        AddHandler menuCopyAnswer.Click, AddressOf copyAnswer
         AddHandler menuPasteAnswer.Click, AddressOf exitAndPaste
         AddHandler menuExit.Click, AddressOf exitSafely
     End Sub
@@ -344,16 +344,20 @@ Public Class formMain
 
     ' copy answer and exit
     Private Sub copyAndExit()
+        copyAnswer()
+        exitSafely()
+    End Sub
+
+    ' copy answer only
+    Private Sub copyAnswer()
         If textResult.Text = Updates.AboutInfo.Link Then
             Process.Start("http://" & Updates.AboutInfo.Link)
             Clipboard.SetText(Updates.AboutInfo.Link)
-            exitSafely()
             Return
         End If
 
         If result IsNot Nothing Then
             Clipboard.SetText(result.Value.ToString())
-            exitSafely()
         Else
             Beep()
         End If
@@ -387,13 +391,13 @@ Public Class formMain
 
         ' Website / Updates
         If textResult.Text = Updates.AboutInfo.Link Then
-            menuCopyExit.Text = "Visit website"
+            menuCopyAnswer.Text = "Visit website"
             menuExpression.Visible = False
             menuPasteAnswer.Visible = False
             Return
         Else
-            menuCopyExit.Text = "Copy result and exit"
-            menuCopyExit.Visible = result IsNot Nothing
+            menuCopyAnswer.Text = "Copy result and exit"
+            menuCopyAnswer.Visible = result IsNot Nothing
             menuPasteAnswer.Visible = result IsNot Nothing
         End If
 
@@ -431,6 +435,8 @@ Public Class formMain
     ' handle 'Check for updates' menu item
     Private Sub menuUpdates_Click() Handles menuUpdates.Click
         Dim updater As New Updates()
+
+        Me.Cursor = Cursors.AppStarting
         updater.CheckUpdates(AddressOf updateCheck_Result)
 
         menuUpdates.Text = "Checking for updates..."
@@ -439,6 +445,8 @@ Public Class formMain
 
     ' check results callback
     Private Sub updateCheck_Result(result As Updates.UpdateInfo)
+        Me.Cursor = Cursors.Default
+
         Select Case result.ErrorResult
             Case Updates.UpdateErrors.AlreadyUpdated
                 MessageBox.Show("Your current version is up to date!",

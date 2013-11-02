@@ -87,7 +87,7 @@ Partial Class formMain
         Me.menuUpdates = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.menuPasteAnswer = New System.Windows.Forms.ToolStripMenuItem()
-        Me.menuCopyExit = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menuCopyAnswer = New System.Windows.Forms.ToolStripMenuItem()
         Me.menuExit = New System.Windows.Forms.ToolStripMenuItem()
         Me.infoTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.timerSave = New System.Windows.Forms.Timer(Me.components)
@@ -156,9 +156,9 @@ Partial Class formMain
         '
         'menuSettings
         '
-        Me.menuSettings.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menuHistory, Me.menuExpression, Me.menuSize, Me.ThemeToolStripMenuItem, Me.WindowToolStripMenuItem, Me.FormattingToolStripMenuItem, Me.ToolStripMenuItem5, Me.menuAbout, Me.menuUpdates, Me.ToolStripSeparator1, Me.menuPasteAnswer, Me.menuCopyExit, Me.menuExit})
+        Me.menuSettings.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menuHistory, Me.menuExpression, Me.menuSize, Me.ThemeToolStripMenuItem, Me.WindowToolStripMenuItem, Me.FormattingToolStripMenuItem, Me.ToolStripMenuItem5, Me.menuAbout, Me.menuUpdates, Me.ToolStripSeparator1, Me.menuPasteAnswer, Me.menuCopyAnswer, Me.menuExit})
         Me.menuSettings.Name = "menuSettings"
-        Me.menuSettings.Size = New System.Drawing.Size(211, 258)
+        Me.menuSettings.Size = New System.Drawing.Size(211, 280)
         Me.menuSettings.Text = "Menu"
         '
         'menuHistory
@@ -184,7 +184,7 @@ Partial Class formMain
         '
         Me.menuNew.Name = "menuNew"
         Me.menuNew.ShortcutKeyDisplayString = "Ctrl + N"
-        Me.menuNew.Size = New System.Drawing.Size(192, 22)
+        Me.menuNew.Size = New System.Drawing.Size(193, 22)
         Me.menuNew.Text = "New"
         Me.menuNew.ToolTipText = "Creates a new Kalq window"
         '
@@ -192,7 +192,7 @@ Partial Class formMain
         '
         Me.menuDuplicate.Name = "menuDuplicate"
         Me.menuDuplicate.ShortcutKeyDisplayString = "Ctrl + D"
-        Me.menuDuplicate.Size = New System.Drawing.Size(192, 22)
+        Me.menuDuplicate.Size = New System.Drawing.Size(193, 22)
         Me.menuDuplicate.Text = "Duplicate"
         Me.menuDuplicate.ToolTipText = "Creates a new Kalq window with existing expression"
         '
@@ -200,74 +200,74 @@ Partial Class formMain
         '
         Me.menuExtract.Name = "menuExtract"
         Me.menuExtract.ShortcutKeyDisplayString = "Ctrl + E"
-        Me.menuExtract.Size = New System.Drawing.Size(192, 22)
+        Me.menuExtract.Size = New System.Drawing.Size(193, 22)
         Me.menuExtract.Text = "Extract"
         Me.menuExtract.ToolTipText = "Creates a new Kalq window with selected text"
         '
         'ToolStripMenuItem6
         '
         Me.ToolStripMenuItem6.Name = "ToolStripMenuItem6"
-        Me.ToolStripMenuItem6.Size = New System.Drawing.Size(189, 6)
+        Me.ToolStripMenuItem6.Size = New System.Drawing.Size(190, 6)
         '
         'menuFraction
         '
         Me.menuFraction.Name = "menuFraction"
         Me.menuFraction.ShortcutKeyDisplayString = "Ctrl + F"
-        Me.menuFraction.Size = New System.Drawing.Size(192, 22)
+        Me.menuFraction.Size = New System.Drawing.Size(193, 22)
         Me.menuFraction.Text = "Fraction"
         '
         'menuBracket
         '
         Me.menuBracket.Name = "menuBracket"
         Me.menuBracket.ShortcutKeyDisplayString = "Ctrl + G"
-        Me.menuBracket.Size = New System.Drawing.Size(192, 22)
+        Me.menuBracket.Size = New System.Drawing.Size(193, 22)
         Me.menuBracket.Text = "Bracket"
         '
         'menuInvert
         '
         Me.menuInvert.Name = "menuInvert"
         Me.menuInvert.ShortcutKeyDisplayString = "Ctrl + I"
-        Me.menuInvert.Size = New System.Drawing.Size(192, 22)
+        Me.menuInvert.Size = New System.Drawing.Size(193, 22)
         Me.menuInvert.Text = "Inversion"
         '
         'menuMultiply
         '
         Me.menuMultiply.Name = "menuMultiply"
         Me.menuMultiply.ShortcutKeyDisplayString = "Ctrl + M"
-        Me.menuMultiply.Size = New System.Drawing.Size(192, 22)
+        Me.menuMultiply.Size = New System.Drawing.Size(193, 22)
         Me.menuMultiply.Text = "Multiply"
         '
         'menuRoot
         '
         Me.menuRoot.Name = "menuRoot"
         Me.menuRoot.ShortcutKeyDisplayString = "Ctrl + R"
-        Me.menuRoot.Size = New System.Drawing.Size(192, 22)
+        Me.menuRoot.Size = New System.Drawing.Size(193, 22)
         Me.menuRoot.Text = "Square root"
         '
         'menuSquare
         '
         Me.menuSquare.Name = "menuSquare"
         Me.menuSquare.ShortcutKeyDisplayString = "Ctrl + 2"
-        Me.menuSquare.Size = New System.Drawing.Size(192, 22)
+        Me.menuSquare.Size = New System.Drawing.Size(193, 22)
         Me.menuSquare.Text = "Square"
         '
         'menuCube
         '
         Me.menuCube.Name = "menuCube"
         Me.menuCube.ShortcutKeyDisplayString = "Ctrl + 3"
-        Me.menuCube.Size = New System.Drawing.Size(192, 22)
+        Me.menuCube.Size = New System.Drawing.Size(193, 22)
         Me.menuCube.Text = "Cube"
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(189, 6)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(190, 6)
         '
         'menuAddPlus
         '
         Me.menuAddPlus.Name = "menuAddPlus"
         Me.menuAddPlus.ShortcutKeyDisplayString = "Shift + Enter"
-        Me.menuAddPlus.Size = New System.Drawing.Size(192, 22)
+        Me.menuAddPlus.Size = New System.Drawing.Size(193, 22)
         Me.menuAddPlus.Text = "Add plus"
         '
         'menuSize
@@ -280,49 +280,49 @@ Partial Class formMain
         'menuSizeSmall
         '
         Me.menuSizeSmall.Name = "menuSizeSmall"
-        Me.menuSizeSmall.Size = New System.Drawing.Size(154, 22)
+        Me.menuSizeSmall.Size = New System.Drawing.Size(158, 22)
         Me.menuSizeSmall.Text = "Small"
         Me.menuSizeSmall.Visible = False
         '
         'menuSizeRegular
         '
         Me.menuSizeRegular.Name = "menuSizeRegular"
-        Me.menuSizeRegular.Size = New System.Drawing.Size(154, 22)
+        Me.menuSizeRegular.Size = New System.Drawing.Size(158, 22)
         Me.menuSizeRegular.Text = "Regular"
         Me.menuSizeRegular.Visible = False
         '
         'menuSizeLarge
         '
         Me.menuSizeLarge.Name = "menuSizeLarge"
-        Me.menuSizeLarge.Size = New System.Drawing.Size(154, 22)
+        Me.menuSizeLarge.Size = New System.Drawing.Size(158, 22)
         Me.menuSizeLarge.Text = "Large"
         Me.menuSizeLarge.Visible = False
         '
         'ToolStripMenuItem3
         '
         Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
-        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(151, 6)
+        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(155, 6)
         Me.ToolStripMenuItem3.Visible = False
         '
         'menuSizeSmaller
         '
         Me.menuSizeSmaller.Name = "menuSizeSmaller"
         Me.menuSizeSmaller.ShortcutKeyDisplayString = "Ctrl + -"
-        Me.menuSizeSmaller.Size = New System.Drawing.Size(154, 22)
+        Me.menuSizeSmaller.Size = New System.Drawing.Size(158, 22)
         Me.menuSizeSmaller.Text = "Smaller"
         '
         'menuSizeLarger
         '
         Me.menuSizeLarger.Name = "menuSizeLarger"
         Me.menuSizeLarger.ShortcutKeyDisplayString = "Ctrl + +"
-        Me.menuSizeLarger.Size = New System.Drawing.Size(154, 22)
+        Me.menuSizeLarger.Size = New System.Drawing.Size(158, 22)
         Me.menuSizeLarger.Text = "Larger"
         '
         'menuSizeReset
         '
         Me.menuSizeReset.Name = "menuSizeReset"
         Me.menuSizeReset.ShortcutKeyDisplayString = "Ctrl + 0"
-        Me.menuSizeReset.Size = New System.Drawing.Size(154, 22)
+        Me.menuSizeReset.Size = New System.Drawing.Size(158, 22)
         Me.menuSizeReset.Text = "Reset"
         '
         'ThemeToolStripMenuItem
@@ -376,7 +376,7 @@ Partial Class formMain
         Me.menuWindowAutoBorder.CheckOnClick = True
         Me.menuWindowAutoBorder.CheckState = System.Windows.Forms.CheckState.Checked
         Me.menuWindowAutoBorder.Name = "menuWindowAutoBorder"
-        Me.menuWindowAutoBorder.Size = New System.Drawing.Size(182, 22)
+        Me.menuWindowAutoBorder.Size = New System.Drawing.Size(183, 22)
         Me.menuWindowAutoBorder.Text = "Auto window border"
         '
         'menuWindowOnTop
@@ -385,7 +385,7 @@ Partial Class formMain
         Me.menuWindowOnTop.CheckOnClick = True
         Me.menuWindowOnTop.CheckState = System.Windows.Forms.CheckState.Checked
         Me.menuWindowOnTop.Name = "menuWindowOnTop"
-        Me.menuWindowOnTop.Size = New System.Drawing.Size(182, 22)
+        Me.menuWindowOnTop.Size = New System.Drawing.Size(183, 22)
         Me.menuWindowOnTop.Text = "Always on top"
         '
         'menuWindowTranslucent
@@ -393,62 +393,62 @@ Partial Class formMain
         Me.menuWindowTranslucent.CheckOnClick = True
         Me.menuWindowTranslucent.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menuOpacity100, Me.menuOpacity90, Me.menuOpacity80, Me.menuOpacity75, Me.menuOpacity50, Me.menuOpacity33, Me.menuOpacity20, Me.menuOpacity10, Me.menuOpacity5})
         Me.menuWindowTranslucent.Name = "menuWindowTranslucent"
-        Me.menuWindowTranslucent.Size = New System.Drawing.Size(182, 22)
+        Me.menuWindowTranslucent.Size = New System.Drawing.Size(183, 22)
         Me.menuWindowTranslucent.Text = "Opacity"
         Me.menuWindowTranslucent.Visible = False
         '
         'menuOpacity100
         '
         Me.menuOpacity100.Name = "menuOpacity100"
-        Me.menuOpacity100.Size = New System.Drawing.Size(101, 22)
+        Me.menuOpacity100.Size = New System.Drawing.Size(102, 22)
         Me.menuOpacity100.Text = "100%"
         '
         'menuOpacity90
         '
         Me.menuOpacity90.Name = "menuOpacity90"
-        Me.menuOpacity90.Size = New System.Drawing.Size(101, 22)
+        Me.menuOpacity90.Size = New System.Drawing.Size(102, 22)
         Me.menuOpacity90.Text = "90%"
         '
         'menuOpacity80
         '
         Me.menuOpacity80.Name = "menuOpacity80"
-        Me.menuOpacity80.Size = New System.Drawing.Size(101, 22)
+        Me.menuOpacity80.Size = New System.Drawing.Size(102, 22)
         Me.menuOpacity80.Text = "80%"
         '
         'menuOpacity75
         '
         Me.menuOpacity75.Name = "menuOpacity75"
-        Me.menuOpacity75.Size = New System.Drawing.Size(101, 22)
+        Me.menuOpacity75.Size = New System.Drawing.Size(102, 22)
         Me.menuOpacity75.Text = "75%"
         '
         'menuOpacity50
         '
         Me.menuOpacity50.Name = "menuOpacity50"
-        Me.menuOpacity50.Size = New System.Drawing.Size(101, 22)
+        Me.menuOpacity50.Size = New System.Drawing.Size(102, 22)
         Me.menuOpacity50.Text = "50%"
         '
         'menuOpacity33
         '
         Me.menuOpacity33.Name = "menuOpacity33"
-        Me.menuOpacity33.Size = New System.Drawing.Size(101, 22)
+        Me.menuOpacity33.Size = New System.Drawing.Size(102, 22)
         Me.menuOpacity33.Text = "33%"
         '
         'menuOpacity20
         '
         Me.menuOpacity20.Name = "menuOpacity20"
-        Me.menuOpacity20.Size = New System.Drawing.Size(101, 22)
+        Me.menuOpacity20.Size = New System.Drawing.Size(102, 22)
         Me.menuOpacity20.Text = "20%"
         '
         'menuOpacity10
         '
         Me.menuOpacity10.Name = "menuOpacity10"
-        Me.menuOpacity10.Size = New System.Drawing.Size(101, 22)
+        Me.menuOpacity10.Size = New System.Drawing.Size(102, 22)
         Me.menuOpacity10.Text = "10%"
         '
         'menuOpacity5
         '
         Me.menuOpacity5.Name = "menuOpacity5"
-        Me.menuOpacity5.Size = New System.Drawing.Size(101, 22)
+        Me.menuOpacity5.Size = New System.Drawing.Size(102, 22)
         Me.menuOpacity5.Text = "5%"
         '
         'FormattingToolStripMenuItem
@@ -478,37 +478,37 @@ Partial Class formMain
         'menuRoundInteger
         '
         Me.menuRoundInteger.Name = "menuRoundInteger"
-        Me.menuRoundInteger.Size = New System.Drawing.Size(157, 22)
+        Me.menuRoundInteger.Size = New System.Drawing.Size(161, 22)
         Me.menuRoundInteger.Text = "Closest integer"
         '
         'menuRound2dp
         '
         Me.menuRound2dp.Name = "menuRound2dp"
-        Me.menuRound2dp.Size = New System.Drawing.Size(157, 22)
+        Me.menuRound2dp.Size = New System.Drawing.Size(161, 22)
         Me.menuRound2dp.Text = "2 decimal places"
         '
         'menuRound3dp
         '
         Me.menuRound3dp.Name = "menuRound3dp"
-        Me.menuRound3dp.Size = New System.Drawing.Size(157, 22)
+        Me.menuRound3dp.Size = New System.Drawing.Size(161, 22)
         Me.menuRound3dp.Text = "3 decimal places"
         '
         'menuRound4dp
         '
         Me.menuRound4dp.Name = "menuRound4dp"
-        Me.menuRound4dp.Size = New System.Drawing.Size(157, 22)
+        Me.menuRound4dp.Size = New System.Drawing.Size(161, 22)
         Me.menuRound4dp.Text = "4 decimal places"
         '
         'menuRound5dp
         '
         Me.menuRound5dp.Name = "menuRound5dp"
-        Me.menuRound5dp.Size = New System.Drawing.Size(157, 22)
+        Me.menuRound5dp.Size = New System.Drawing.Size(161, 22)
         Me.menuRound5dp.Text = "5 decimal places"
         '
         'menuRound6dp
         '
         Me.menuRound6dp.Name = "menuRound6dp"
-        Me.menuRound6dp.Size = New System.Drawing.Size(157, 22)
+        Me.menuRound6dp.Size = New System.Drawing.Size(161, 22)
         Me.menuRound6dp.Text = "6 decimal places"
         '
         'ToolStripMenuItem5
@@ -542,12 +542,12 @@ Partial Class formMain
         Me.menuPasteAnswer.Size = New System.Drawing.Size(210, 22)
         Me.menuPasteAnswer.Text = "Paste answer"
         '
-        'menuCopyExit
+        'menuCopyAnswer
         '
-        Me.menuCopyExit.Name = "menuCopyExit"
-        Me.menuCopyExit.ShortcutKeyDisplayString = "Enter"
-        Me.menuCopyExit.Size = New System.Drawing.Size(210, 22)
-        Me.menuCopyExit.Text = "Copy result and Exit"
+        Me.menuCopyAnswer.Name = "menuCopyAnswer"
+        Me.menuCopyAnswer.ShortcutKeyDisplayString = "Enter"
+        Me.menuCopyAnswer.Size = New System.Drawing.Size(210, 22)
+        Me.menuCopyAnswer.Text = "Copy answer"
         '
         'menuExit
         '
@@ -603,7 +603,7 @@ Partial Class formMain
     Friend WithEvents ToolStripMenuItem5 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents menuUpdates As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents menuCopyExit As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents menuCopyAnswer As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents menuSize As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents menuSizeSmall As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents menuSizeRegular As System.Windows.Forms.ToolStripMenuItem
