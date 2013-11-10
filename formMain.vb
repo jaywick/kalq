@@ -396,7 +396,7 @@ Public Class formMain
             menuPasteAnswer.Visible = False
             Return
         Else
-            menuCopyAnswer.Text = "Copy result and exit"
+            menuCopyAnswer.Text = "Copy answer"
             menuCopyAnswer.Visible = result IsNot Nothing
             menuPasteAnswer.Visible = result IsNot Nothing
         End If
@@ -420,7 +420,7 @@ Public Class formMain
     ' save history using a timer
     Private Sub timerSave_Tick(sender As Object, e As EventArgs) Handles timerSave.Tick
         ' exit if there is no answer
-        If result Is Nothing OrElse textExpression.Text = "" Then Return
+        If result Is Nothing OrElse textExpression.Text = "" OrElse result.Output.hasError Then Return
 
         ' exit if last answer hasn't changed since last save
         If history.Count > 0 AndAlso textExpression.Text = history(history.Count - 1) Then Return

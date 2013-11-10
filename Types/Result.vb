@@ -25,7 +25,13 @@ End Class
 Public Class ScriptResult
     Public Property ReturnValue As String
     Public Property ErrorReturned As ResultErrors ' error returned from calculation
-    Public ReadOnly hasError As Boolean = ErrorReturned <> ResultErrors.None ' check to see if error exists
+
+    ' checks to see if an error exists
+    Public ReadOnly Property HasError As Boolean
+        Get
+            Return ErrorReturned <> ResultErrors.None
+        End Get
+    End Property
 
     ' create a result containing something
     Public Sub New(value As String)
