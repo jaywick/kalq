@@ -7,7 +7,7 @@ Calculator software try too hard to imitate the real thing. They end up big and 
 ![](preview.jpg)
 
 ## Project Home
-Kalq is a **[Jay Wick Labs](http://labs.jay-wick.com/labs)** and the project home can be found at [http://labs.jay-wick.com/projects/kalq](http://labs.jay-wick.com/projects/kalq)
+Kalq is a **[Jay Wick Labs](http://labs.jay-wick.com/labs)** and the project home can be found at <http://labs.jay-wick.com/projects/kalq>. Forward any requests or bugs to <http://feedback.jay-wick.com/kalq/meta/about>
 
 
 ## Usage
