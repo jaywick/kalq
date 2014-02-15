@@ -1,4 +1,5 @@
 ﻿Imports jaywick.labs.kalq.Exceptions
+Imports jaywick.labs.kalq.TextBoxExtensions
 Imports System.Net
 
 Public Class formMain
@@ -84,7 +85,7 @@ Public Class formMain
             ' return result from calculation
             Dim calculationResult As ScriptResult = calculation.Evaluate(properExpression)
 
-            If calculationResult.hasError = False AndAlso IsNumeric(calculationResult.ReturnValue) Then
+            If calculationResult.HasError = False AndAlso IsNumeric(calculationResult.ReturnValue) Then
                 ' format the number, prepare return object
                 Dim formattedResult = formatting.PrettifyOutput(calculationResult.ReturnValue)
                 result = New Result(calculationResult, formattedResult)
@@ -161,7 +162,7 @@ Public Class formMain
                 Case Keys.NumPad3, Keys.D3
                     formatting.CubeSelection()
                 Case Keys.Enter
-                    formatting.AddPlus()
+                    evaluateToNewWindow()
 
                 Case Keys.N
                     newWindow()
@@ -197,6 +198,13 @@ Public Class formMain
                     e.SuppressKeyPress = False
                     If Preferences.Instance.AutoBorder Then Me.FormBorderStyle = Windows.Forms.FormBorderStyle.FixedToolWindow
             End Select
+
+        ElseIf e.Shift Then
+
+            If e.KeyCode = Keys.Enter Then
+                formatting.EvaluateSelection()
+            End If
+
         End If
 
         ' shortcuts where modifier aren't important
@@ -283,7 +291,8 @@ Public Class formMain
         AddHandler menuRoot.Click, AddressOf formatting.SquareRootSelection
         AddHandler menuSquare.Click, AddressOf formatting.SquareSelection
         AddHandler menuCube.Click, AddressOf formatting.CubeSelection
-        AddHandler menuAddPlus.Click, AddressOf formatting.AddPlus
+        AddHandler menuEvaluate.Click, AddressOf formatting.EvaluateSelection
+        AddHandler menuEvaluteToNew.Click, AddressOf evaluateToNewWindow
 
         AddHandler menuSizeLarger.Click, Sub() visual.AdjustTextSize(visual.ResizingDirection.Larger)
         AddHandler menuSizeReset.Click, Sub() visual.AdjustTextSize(visual.ResizingDirection.Reset)
@@ -292,8 +301,6 @@ Public Class formMain
         AddHandler menuWindowOnTop.CheckedChanged, AddressOf menuWindowOnTop_CheckedChanged
         AddHandler menuWindowAutoBorder.CheckedChanged, AddressOf menuAutoBorder_CheckedChanged
 
-        AddHandler menuCopyAnswer.Click, AddressOf copyAnswer
-        AddHandler menuPasteAnswer.Click, AddressOf exitAndPaste
         AddHandler menuExit.Click, AddressOf exitSafely
     End Sub
 
@@ -393,12 +400,10 @@ Public Class formMain
         If textResult.Text = Updates.AboutInfo.Link Then
             menuCopyAnswer.Text = "Visit website"
             menuExpression.Visible = False
-            menuPasteAnswer.Visible = False
             Return
         Else
             menuCopyAnswer.Text = "Copy answer"
             menuCopyAnswer.Visible = result IsNot Nothing
-            menuPasteAnswer.Visible = result IsNot Nothing
         End If
 
         ' Expression / Selection
@@ -420,7 +425,7 @@ Public Class formMain
     ' save history using a timer
     Private Sub timerSave_Tick(sender As Object, e As EventArgs) Handles timerSave.Tick
         ' exit if there is no answer
-        If result Is Nothing OrElse textExpression.Text = "" OrElse result.Output.hasError Then Return
+        If result Is Nothing OrElse textExpression.Text = "" OrElse result.Output.HasError Then Return
 
         ' exit if last answer hasn't changed since last save
         If history.Count > 0 AndAlso textExpression.Text = history(history.Count - 1) Then Return
@@ -504,6 +509,18 @@ Public Class formMain
     ' create new window only with selected contents
     Private Sub extractWindow()
         spawn(textExpression.SelectedText)
+    End Sub
+
+    ' create new window with selection evaluated
+    Private Sub evaluateToNewWindow()
+        Dim evaluation As ScriptResult = New Calculation().Evaluate(formatting.Normalise(textExpression.SelectedOrAll))
+
+        If evaluation.HasError Then
+            Beep()
+            Return
+        End If
+
+        spawn(evaluation.ReturnValue.ToString())
     End Sub
 
 End Class

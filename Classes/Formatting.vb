@@ -93,6 +93,30 @@ Public Class Formatting
     End Sub
 
     ''' <summary>
+    ''' Convert selection
+    ''' </summary>
+    ''' <remarks></remarks>
+    Sub EvaluateSelection()
+        Dim evaluation As ScriptResult = New Calculation().Evaluate(Normalise(textBoxReference.SelectedOrAll))
+
+        If evaluation.HasError Then
+            Beep()
+            Return
+        End If
+
+        Dim selectionStartPosition As Integer = textBoxReference.SelectionStart
+
+        If textBoxReference.SelectionLength = 0 Then
+            textBoxReference.Text = evaluation.ReturnValue
+        Else
+            textBoxReference.SelectedText = evaluation.ReturnValue
+        End If
+
+        textBoxReference.SelectionStart = selectionStartPosition
+        textBoxReference.SelectionLength = evaluation.ReturnValue.Length
+    End Sub
+
+    ''' <summary>
     ''' Remove text which is not selected
     ''' </summary>
     ''' <remarks></remarks>
