@@ -11,6 +11,8 @@ Public Class formMain
     Private blockTextEvents As New Block ' mutex to prevent infinite calls when programmatically editing text input
     Private history As New List(Of String) ' history of calculations
 
+    Private Const TicketsLink As String = "http://labs.jay-wick.com/projects/kalq"
+
     ''' <summary>
     ''' Constructor for main Kalq form. Initialises the window and instantiates necessary classes
     ''' </summary>
@@ -523,4 +525,12 @@ Public Class formMain
         spawn(evaluation.ReturnValue.ToString())
     End Sub
 
+    Private Sub menuSubmitTicket_Click(sender As Object, e As EventArgs) Handles menuSubmitTicket.Click
+        Try
+            Process.Start(TicketsLink)
+        Catch ex As Exception
+            MessageBox.Show("There was an issue trying to open the site to add feedback. You can visit it manually at" & vbCrLf &
+                            TicketsLink, "Submitting feedback", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End Try
+    End Sub
 End Class
