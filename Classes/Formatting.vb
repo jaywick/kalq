@@ -128,6 +128,40 @@ Public Class Formatting
     End Sub
 
     ''' <summary>
+    ''' Delete a term backwards from current cursor position
+    ''' </summary>
+    ''' <remarks></remarks>
+    Sub DeleteBackward()
+        If textBoxReference.Text <> "" AndAlso textBoxReference.SelectionStart > 0 Then
+            Dim initialSelectionStart = textBoxReference.SelectionStart
+            Dim firstNonAlphaNumeric = textBoxReference.SelectionStart
+            Dim startPosition = textBoxReference.SelectionStart - 1
+
+            ' determine where to stop by what the current character is:
+            ' when alphanumeric => stop on non alphanumeric
+            Dim isCharacterDifferentType As Func(Of Char, Boolean)
+            If Char.IsLetterOrDigit(textBoxReference.Text(startPosition)) Then
+                isCharacterDifferentType = Function(chr) Not Char.IsLetterOrDigit(chr)
+            Else
+                isCharacterDifferentType = Function(chr) Char.IsLetterOrDigit(chr)
+            End If
+
+            ' go backwards from current cursor position until different character appears
+            For i = startPosition To 0 Step -1
+                If isCharacterDifferentType(textBoxReference.Text(i)) Then
+                    firstNonAlphaNumeric = i + 1
+                    Exit For
+                End If
+
+                If i = 0 Then firstNonAlphaNumeric = 0
+            Next
+
+            textBoxReference.Text = textBoxReference.Text.Substring(0, firstNonAlphaNumeric) + textBoxReference.Text.Substring(initialSelectionStart)
+            textBoxReference.SelectionStart = firstNonAlphaNumeric
+        End If
+    End Sub
+
+    ''' <summary>
     ''' Removes the prettification replacements made by <see>PrettifyInput</see>
     ''' </summary>
     ''' <param name="expression">Prettified expression to normalise</param>

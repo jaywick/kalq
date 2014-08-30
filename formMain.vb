@@ -147,6 +147,8 @@ Public Class formMain
             Select Case e.KeyCode
                 Case Keys.Delete
                     formatting.TrimSelection()
+                Case Keys.Back
+                    formatting.DeleteBackward()
                 Case Keys.G
                     formatting.GroupSelection()
                 Case Keys.F
