@@ -10,10 +10,10 @@ Imports System.Runtime.InteropServices
 
 <Assembly: AssemblyTitle("Kalq")> 
 <Assembly: AssemblyDescription("A calculator for the rest of us")> 
-<Assembly: AssemblyCompany("Jaywick Labs")> 
+<Assembly: AssemblyCompany("Jay Wick Labs")> 
 <Assembly: AssemblyProduct("Kalq")> 
-<Assembly: AssemblyCopyright("Copyright © 2013 Jaywick Labs")> 
-<Assembly: AssemblyTrademark("Jaywick Labs")> 
+<Assembly: AssemblyCopyright("Copyright © 2014 Jay Wick Labs")> 
+<Assembly: AssemblyTrademark("Jay Wick Labs")> 
 
 <Assembly: ComVisible(False)> 
 
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("1.0.3.0")> 
-<Assembly: AssemblyFileVersion("1.0.3.0")> 
+<Assembly: AssemblyVersion("1.0.4.0")> 
+<Assembly: AssemblyFileVersion("1.0.4.0")> 

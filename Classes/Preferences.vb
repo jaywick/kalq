@@ -55,7 +55,7 @@ Public Class Preferences
 
 #Region "Serialisation"
 
-    Private ReadOnly settingsPath() As String = {"Jaywick Labs", "Kalq", "preferences.xml"} ' components of settings file's path
+    Private ReadOnly settingsPath() As String = {"Jay Wick Labs", "Kalq", "preferences.xml"} ' components of settings file's path
     Private filePath As String ' path to file (created when settingsPath array is compiled into a path)
     Private Shared isRead As Boolean = False ' specifies if settings file has been read yet
 
